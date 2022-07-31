@@ -1,0 +1,9 @@
+div {
+    height: 100%;
+    
+    /* vertical center */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

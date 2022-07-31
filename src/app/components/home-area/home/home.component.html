@@ -1,0 +1,20 @@
+<div>
+
+    <app-search></app-search>
+<!-- LifeCycle Hooks -->
+    <app-clock></app-clock>
+
+    <app-slogan slogan="Exotic Products!"></app-slogan>
+    <app-slogan slogan="Healthy & Cheap"></app-slogan>
+
+    <!-- ng-content -->
+    <app-tip>
+        Eat a <strong> healthy </strong> breakfast 
+    </app-tip>
+
+    <app-tip>
+        <span class="subject">Weight R eduction</span>
+        Avoid eating after <strong>9:00 PM</strong> 
+    </app-tip>
+    <app-survey question="How is our service qualify?" (report)="display($event)"></app-survey>
+</div>
