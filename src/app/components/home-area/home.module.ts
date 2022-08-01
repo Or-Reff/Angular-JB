@@ -13,6 +13,7 @@ import { DiscountComponent } from './discount/discount.component';
 import { SalesComponent } from './sales/sales.component';
 import { DirectivesModule } from 'src/app/directives/directives.module';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+import { RandomSaleComponent } from './random-sale/random-sale.component';
 
 
 
@@ -27,7 +28,8 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     LocationComponent,
     GiftCardComponent,
     DiscountComponent,
-    SalesComponent
+    SalesComponent,
+    RandomSaleComponent
   ],
   imports: [
     CommonModule,
