@@ -5,7 +5,9 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeModule } from '../home-area/home.module';
-import { HomeComponent } from '../home-area/home/home.component';
+import { AboutModule } from '../about-area/about.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { HomeComponent } from '../home-area/home/home.component';
     HeaderComponent,
     MenuComponent,
     FooterComponent,
+    PageNotFoundComponent,
   ],
-  imports: [CommonModule,HomeModule],
+  imports: [CommonModule,HomeModule,AboutModule , AppRoutingModule],
 })
 export class LayoutModule {}

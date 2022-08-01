@@ -4,17 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './components/layout-area/layout.module';
 import { LayoutComponent } from './components/layout-area/layout/layout.component';
-import { HomeComponent } from './components/home-area/home/home.component';
-import { HomeModule } from './components/home-area/home.module';
+import { ProductListComponent } from './components/product-area/product-list/product-list.component';
 
 @NgModule({
-  declarations: [  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule,
+    LayoutModule
   ],
   providers: [],
-  bootstrap: [LayoutComponent]
+  bootstrap: [LayoutComponent],
+  declarations: [
+    ProductListComponent
+  ]
 })
 export class AppModule { }
