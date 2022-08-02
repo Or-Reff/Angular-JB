@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './components/layout-area/layout.module';
 import { LayoutComponent } from './components/layout-area/layout/layout.component';
-import { ProductListComponent } from './components/product-area/product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductCardComponent } from './products-area/product-card/product-card.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -15,7 +13,6 @@ import { ProductCardComponent } from './products-area/product-card/product-card.
     HttpClientModule, // AJAX Request
   ],
   providers: [],
-  bootstrap: [LayoutComponent],
-  declarations: [ProductListComponent, ProductCardComponent],
+  bootstrap: [LayoutComponent]
 })
 export class AppModule {}

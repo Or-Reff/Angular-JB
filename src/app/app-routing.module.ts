@@ -5,7 +5,7 @@ import { ContactUsComponent } from './components/contact-us-area/contact-us/cont
 import { GiftShopComponent } from './components/gift-shop-area/gift-shop/gift-shop.component';
 import { HomeComponent } from './components/home-area/home/home.component';
 import { PageNotFoundComponent } from './components/layout-area/page-not-found/page-not-found.component';
-import { ProductListComponent } from './components/product-area/product-list/product-list.component';
+import { ProductListComponent } from './components/products-area/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/products-area/product-details/product-details.component';
 import { SellersComponent } from './components/sellers-area/sellers/sellers.component';
 

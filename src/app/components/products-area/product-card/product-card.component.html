@@ -1,0 +1,9 @@
+<div class="box">
+  <div>
+    {{ product.name }}<br />
+    Price: {{ product.price | currency }} Stock: {{ product.stock }}
+  </div>
+  <div>
+    <img [src]="imageSource">
+  </div>
+</div>
