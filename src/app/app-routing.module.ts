@@ -8,11 +8,14 @@ import { PageNotFoundComponent } from './components/layout-area/page-not-found/p
 import { ProductListComponent } from './components/products-area/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/products-area/product-details/product-details.component';
 import { SellersComponent } from './components/sellers-area/sellers/sellers.component';
+import { AddProductComponent } from './components/products-area/add-product/add-product.component';
 
 const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'products',component:ProductListComponent},
     {path:'products/details/:productId',component:ProductDetailsComponent},
+    {path:'products/new',component:AddProductComponent},
+
     {path:'gift-shop',component:GiftShopComponent},
     {path:'sellers',component:SellersComponent},
     {path:'about',component:AboutComponent},

@@ -17,4 +17,21 @@ export class ProductsService {
     );
     return products;
   }
+  public async getOneProduct(id: number): Promise<ProductModel> {
+    const product = await firstValueFrom(
+      this.http.get<ProductModel>(environment.productUrl + id)
+    );
+    return product;
+  }
+
+  public async addProduct(product: ProductModel): Promise<void> {
+    const formData = new FormData();
+    formData.append('name', product.name);
+    formData.append('price', product.price.toString());
+    formData.append('stock', product.stock.toString());
+    formData.append('image', product.image);
+    const addedProduct = await firstValueFrom(
+        this.http.post<ProductModel>(environment.productUrl,formData)
+    )
+  }
 }

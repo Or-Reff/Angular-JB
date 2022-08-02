@@ -4,6 +4,9 @@
     Price: {{ product.price | currency }} Stock: {{ product.stock }}
   </div>
   <div>
-    <img [src]="imageSource">
+    <a routerLink="/products/details/{{product.id}}">
+      <img [src]="imageSource"
+    /></a>
   </div>
 </div>
+

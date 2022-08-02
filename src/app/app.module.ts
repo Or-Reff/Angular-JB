@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './components/layout-area/layout.module';
 import { LayoutComponent } from './components/layout-area/layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddProductComponent } from './components/products-area/add-product/add-product.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -13,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule, // AJAX Request
   ],
   providers: [],
-  bootstrap: [LayoutComponent]
+  bootstrap: [LayoutComponent],
+
 })
 export class AppModule {}

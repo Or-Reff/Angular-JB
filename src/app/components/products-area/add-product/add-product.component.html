@@ -1,0 +1,61 @@
+<div class="box">
+  <form (ngSubmit)="send()" #productForm="ngForm">
+    <h1>Add Product</h1>
+    <label>Name</label>
+    <!-- ngModel needs import FormsModule-->
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="product.name"
+      required
+      minlength="3"
+      #nameControl="ngModel"
+    />
+    <span *ngIf="nameControl.errors?.['required'] && nameControl.touched"
+      >Missing name</span
+    >
+    <span *ngIf="nameControl.errors?.['minLength'] && nameControl.touched"
+      >Minimum length is not met, should be atleast 3 characters</span
+    >
+    <span *ngIf="nameControl.errors?.['maxLength'] && nameControl.touched"
+      >Max length is 100 characters</span
+    >
+
+    <hr />
+    {{ nameControl.errors | json }}
+    <hr />
+
+    <label>Price</label>
+    <input
+      type="number"
+      name="price"
+      [(ngModel)]="product.price"
+      #priceControl="ngModel"
+      required
+      min = "0"
+      max = "100"
+    />
+    <span
+      *ngIf="priceControl.errors?.['required'] && priceControl.touched"
+    ></span>
+    <span *ngIf="priceControl.errors?.['min'] && priceControl.touched"></span>
+    <span *ngIf="priceControl.errors?.['max'] && priceControl.touched"></span>
+    <hr />
+    {{ priceControl.errors | json }}
+    <hr />
+    <label>Stock</label>
+    <input
+      type="number"
+      name="stock"
+      [(ngModel)]="product.stock"
+      #stockControl="ngModel"
+    />
+    <hr />
+    {{ stockControl.errors | json }}
+    <hr />
+    <label>Image:</label>
+    <input type="file" accept="image/*" required #imageControl />
+
+    <button [disabled]="productForm.invalid">Add</button>
+  </form>
+</div>

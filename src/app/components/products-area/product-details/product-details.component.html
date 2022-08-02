@@ -1,1 +1,9 @@
-<p>product-details works!</p>
+<!-- if product data arrived(async) show this div-->
+<div class="box" *ngIf="product">
+    <h3>{{product.name}}</h3>
+    <h3>{{product.price | currency}} 🌹 {{product.stock}} in stock</h3>
+    <a routerLink="/products/details/{{product.id}}">
+        <img [src]="imageSource"
+      /></a>
+    <br><br>
+</div>

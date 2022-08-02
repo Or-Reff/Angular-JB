@@ -4,4 +4,5 @@ export class ProductModel{
     public price: number;
     public stock: number;
     public imageName: string;
+    public image:File;
 }
