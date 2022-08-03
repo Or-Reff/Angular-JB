@@ -35,7 +35,7 @@ export class ProductDetailsComponent implements OnInit {
   async deleteProduct() {
     try {
       await this.productsService.deleteProduct(this.product.id);
-      alert('Product deleted');
+      alert('Product deleted111111111111');
       this.router.navigateByUrl("/products");
     } catch (err: any) {}
   }

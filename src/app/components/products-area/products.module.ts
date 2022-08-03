@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { SharedModule } from '../shared-area/shared.module';
 
 
 
@@ -22,7 +23,8 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

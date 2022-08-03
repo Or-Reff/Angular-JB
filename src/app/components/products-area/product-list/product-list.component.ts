@@ -15,7 +15,7 @@ export class ProductListComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     try {
-      this.products = await this.productsService.getAllProduct();
+      this.products = await this.productsService.getAllProducts();
     } catch (err: any) {
       console.log(err.message);
     }

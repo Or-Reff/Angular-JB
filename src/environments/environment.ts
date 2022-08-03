@@ -5,6 +5,10 @@
 export const environment = {
   production: false,
   productUrl: 'http://localhost:3030/api/products/',
+
+// makes sure we see the loading because of delayed back-end
+//   productUrl: 'http://localhost:3030/api/products/delayed',
+
 };
 
 /*
