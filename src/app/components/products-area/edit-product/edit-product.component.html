@@ -1,0 +1,21 @@
+<div class="box">
+    <!-- Reactive Form -->        <!-- if product exists-->
+    <form [formGroup]="productForm" *ngIf="product" (ngSubmit)="send()">    
+
+        <h1>Edit Product</h1>
+
+        <label>Name: </label>
+        <input type="text" [formControl]="nameControl">
+
+        <label>Price: </label>
+        <input type="number" [formControl]="priceControl">
+
+        <label>Stock: </label>
+        <input type="number" [formControl]="stockControl">
+
+        <label>Image: </label>
+        <input type="file" accept="image/" #imageControl>
+
+        <button>Update</button>
+    </form>
+</div>

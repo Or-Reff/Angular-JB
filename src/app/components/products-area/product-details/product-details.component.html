@@ -1,9 +1,18 @@
 <!-- if product data arrived(async) show this div-->
 <div class="box" *ngIf="product">
-    <h3>{{product.name}}</h3>
-    <h3>{{product.price | currency}} 🌹 {{product.stock}} in stock</h3>
-    <a routerLink="/products/details/{{product.id}}">
-        <img [src]="imageSource"
-      /></a>
-    <br><br>
+  <h3>{{ product.name }}</h3>
+  <h3>{{ product.price | currency }} 🌹 {{ product.stock }} in stock</h3>
+  <a routerLink="/products/details/{{ product.id }}">
+    <img [src]="imageSource"
+  /></a>
+  <br /><br />
+
+  <a routerLink="/products">Back</a>
+
+  <span> | </span>
+
+  <a routerLink="/products/edit/{{ product.id }}">Edit</a>
+  <br /><br />
+  <span> | </span>
+  <a href="javacript.void(null)" (click)="deleteProduct()">Delete</a>
 </div>

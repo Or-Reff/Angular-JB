@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductModel } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { environment } from 'src/environments/environment';
@@ -15,7 +15,8 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private router: Router
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -24,9 +25,18 @@ export class ProductDetailsComponent implements OnInit {
     try {
       const id = +this.activatedRoute.snapshot.params['productId'];
       this.product = await this.productsService.getOneProduct(id);
-      this.imageSource = environment.productUrl + "images/" + this.product.imageName;
+      this.imageSource =
+        environment.productUrl + 'images/' + this.product.imageName;
     } catch (err: any) {
-        alert(err.message);
+      alert(err.message);
     }
+  }
+
+  async deleteProduct() {
+    try {
+      await this.productsService.deleteProduct(this.product.id);
+      alert('Product deleted');
+      this.router.navigateByUrl("/products");
+    } catch (err: any) {}
   }
 }
