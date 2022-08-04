@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'products/new', component: AddProductComponent, canActivate: [AuthGuard] },
   { path: 'products/edit/:productId', component: EditProductComponent },
   { path: 'gift-shop', component: GiftShopComponent },
-  { path: 'sellers', component: SellersComponent },
+  // if user go to path route then go to server and gives it
+//   { path: 'sellers', loadChildren: () => import()},
   { path: 'about', component: AboutComponent },
   { path: 'contact-us', component: ContactUsComponent },
 
