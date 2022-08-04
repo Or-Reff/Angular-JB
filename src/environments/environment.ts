@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   productUrl: 'http://localhost:3030/api/products/',
+  registerUrl: 'http://localhost:3030/api/auth/register/',
+  loginUrl: 'http://localhost:3030/api/auth/login/',
 
 // makes sure we see the loading because of delayed back-end
 //   productUrl: 'http://localhost:3030/api/products/delayed',

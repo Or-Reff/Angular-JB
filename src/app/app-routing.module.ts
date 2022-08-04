@@ -10,23 +10,33 @@ import { ProductDetailsComponent } from './components/products-area/product-deta
 import { SellersComponent } from './components/sellers-area/sellers/sellers.component';
 import { AddProductComponent } from './components/products-area/add-product/add-product.component';
 import { EditProductComponent } from './components/products-area/edit-product/edit-product.component';
+import { RegisterComponent } from './components/auth-area/register/register.component';
+import { LogoutComponent } from './components/auth-area/logout/logout.component';
+import { LoginComponent } from './components/auth-area/login/login.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 const routes: Routes = [
-    {path:'home',component:HomeComponent},
-    {path:'products',component:ProductListComponent},
-    {path:'products/details/:productId',component:ProductDetailsComponent},
-    {path:'products/new',component:AddProductComponent},
-    {path: 'products/edit/:productId',component:EditProductComponent},
-    {path:'gift-shop',component:GiftShopComponent},
-    {path:'sellers',component:SellersComponent},
-    {path:'about',component:AboutComponent},
-    {path:'contact-us',component:ContactUsComponent},
-    {path:'',redirectTo:'home',pathMatch:'full'},
-    {path:'**',component:PageNotFoundComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'products', component: ProductListComponent },
+  { path: 'products/details/:productId', component: ProductDetailsComponent },
+                                                                    //blocks specific routes
+  { path: 'products/new', component: AddProductComponent, canActivate: [AuthGuard] },
+  { path: 'products/edit/:productId', component: EditProductComponent },
+  { path: 'gift-shop', component: GiftShopComponent },
+  { path: 'sellers', component: SellersComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
+
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

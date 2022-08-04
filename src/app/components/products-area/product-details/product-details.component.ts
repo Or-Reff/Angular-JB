@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductModel } from 'src/app/models/product.model';
+import { authStore } from 'src/app/redux/auth-state';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +13,7 @@ import { environment } from 'src/environments/environment';
 export class ProductDetailsComponent implements OnInit {
   public product: ProductModel;
   public imageSource: string;
-
+  public isLoggedIn: boolean;
   constructor(
     private activatedRoute: ActivatedRoute,
     private productsService: ProductsService,
@@ -26,7 +27,8 @@ export class ProductDetailsComponent implements OnInit {
       const id = +this.activatedRoute.snapshot.params['productId'];
       this.product = await this.productsService.getOneProduct(id);
       this.imageSource =
-        environment.productUrl + 'images/' + this.product.imageName;
+      environment.productUrl + 'images/' + this.product.imageName;
+      this.isLoggedIn = authStore.getState().token !== null
     } catch (err: any) {
       alert(err.message);
     }
